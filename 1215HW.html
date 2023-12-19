@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing</title>
+    <script>
+        var rand = Math.floor((Math.random() * 10) + 1);
+        function startGame(){
+            var guess = 0;
+            while (guess !== rand){
+                var userInput = prompt("Guess the number between 1 and 10:");
+
+                if (userInput == null){
+                    alert("The correct number was" + rand + ".");
+                    break;
+                }
+
+                guess = parseInt(userInput);
+                if (guess === rand){
+                    alert("You guessed the correct number.");
+                } else if(guess > rand){
+                    alert("Too big. Try again.");
+                } else if(guess < rand){
+                    alert("Too small. Try again.");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Nuber Guessing Game</h1>
+    <button onclick="startGame()">Start Game</button>
+</body>
+</html>
